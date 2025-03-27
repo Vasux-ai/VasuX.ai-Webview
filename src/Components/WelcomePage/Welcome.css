@@ -1,0 +1,13 @@
+.container {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+}
