@@ -10,10 +10,8 @@ function App() {
   return (
     <>
     
-       <WelcomeRobo/>
- 
-
-      {/* <Home/> */}
+       {/* <WelcomeRobo/> */}
+      <Home/>
 
     </>
   );

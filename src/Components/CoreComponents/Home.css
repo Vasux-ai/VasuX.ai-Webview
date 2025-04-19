@@ -1,56 +1,159 @@
 .container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 750px;
+  height: 70vh;
+  overflow-y:auto;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  padding: 10px;
+  border-radius: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+
+.chat-bubble {
+  padding: 12px 16px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 15px;
+}
+
+.chat-bubble.user {
+  background-color: #cfe9ff;
+  align-self: flex-end;
+}
+
+.chat-bubble.ai {
+  background-color: #e3e3e3;
+  align-self: flex-start;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+}
+
+.text-box {
+  width: 2000px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  overflow-y: hidden;
+  resize: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  transition: height 0.2s ease;
+}
+
+
+.send-button {
+  background: none;
+  border: 1px solid white;
+  cursor: pointer;
+  display: flex;
+  border: none;
+}
+.send-icon {
+  height:20px;
+  width: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.black-line {
+  height: 2px;
+  background-color: black;
+  width: 100%;
+  margin-bottom: 8px; /* Adjust spacing below the line */
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.4em 0.7em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (max-width: 768px) {
+  .container {
     flex-direction: column;
+    padding: 10px;
   }
-  
-  .title {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
+
+  .chat-container {
+    height: 60vh;
+    max-width: 100%;
+    padding: 5px;
   }
-  
-  .bottom-container {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  /* Updated input container */
+
   .input-container {
-    position: relative;
-    width: 450px;
+    max-width: 90%;
+    padding: 5px;
   }
-  
+
   .text-box {
-    width: 100%;
-    padding: 10px 40px 10px 10px; /* Right padding for icon */
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-    outline: none;
+    font-size: 14px;
+    padding: 8px;
   }
-  
-  /* Position send icon inside input */
-  .send-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 24px;
-    width: 24px;
-    cursor: pointer;
+
+  /* .send-icon {
+    height: 25px;
+    width: 25px;
+  } */
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1rem;
   }
-  
+
+  .chat-bubble {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
